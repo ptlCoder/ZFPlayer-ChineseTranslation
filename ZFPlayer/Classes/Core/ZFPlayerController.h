@@ -192,6 +192,15 @@ NS_ASSUME_NONNULL_BEGIN
 //// 设置播放某indexPath，是否把当前播放indexPath滑动到UICollectionViewScrollPositionTop位置
 - (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop;
 
+/// Play the indexPath with assetURL.
+/// `assetURL` is the player URL.
+/// `scrollToTop` scroll the current cell to top with animations.
+- (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL scrollToTop:(BOOL)scrollToTop;
+
+/// Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
+/// `scrollToTop` scroll the current cell to top with animations.
+/// Scroll completion callback.
+- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop completionHandler:(void (^ __nullable)(void))completionHandler;
 
 @end
 
